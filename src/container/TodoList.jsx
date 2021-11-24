@@ -29,7 +29,6 @@ const TodoList = () => {
       <AddForm />
       <FilterButtons
         setFilterValue={setFilterValue}
-        filterValue={filterValue}
       />
       <ToDos todoArr={visibleList} />
       {/* {todoArr && todoArr.map((todo) => <ToDos todo={todo} key={todo.id} />)} */}

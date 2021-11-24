@@ -1,6 +1,6 @@
 import React from 'react'
 
-const FilterButtons = ({ filterValue, setFilterValue }) => {
+const FilterButtons = ({ setFilterValue }) => {
     return (
         <div className="container center">
             <button 
