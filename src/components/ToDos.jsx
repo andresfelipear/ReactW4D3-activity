@@ -1,6 +1,7 @@
 import React from 'react'
 
-const ToDos = ({ todoArr }) => {
+const ToDos = ({ todoArr, setIsDone, deleteTodo }) => {
+
   return (
     <div className='collection'>
       {todoArr &&
@@ -10,14 +11,14 @@ const ToDos = ({ todoArr }) => {
               style={{
                 textDecoration: todo.isDone ? 'line-through' : 'none',
               }}
-              onClick={() => {}}
+              // onClick={() => setIsDone(todo)}
             >
               {todo.content}
             </span>
-            <a href='#~' className='secondary-content' onClick={() => {}}>
+            <a href='#~' className='secondary-content' onClick={() => {deleteTodo(todo.id)}}>
               <i className='material-icons red-text text-accent-1'>delete</i>
             </a>
-            <a href='#~' onClick={() => {}} className='secondary-content'>
+            <a href='#~' onClick={() => {setIsDone(todo.id)}} className='secondary-content'>
               <i
                 className={`material-icons ${
                   !todo.isDone

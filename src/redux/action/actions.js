@@ -5,3 +5,11 @@ export const REMOVE_TO_DO = "REMOVE_TO_DO"
 export const newToDoAction = (content) => {
     return { type: NEW_TO_DO, payload: content }
 }
+
+export const doneToDo = (id) => {
+    return { type: DONE_TO_DO, payload: id }
+}
+
+export const removeToDo = (id) => {
+    return { type: REMOVE_TO_DO, payload: id }
+}

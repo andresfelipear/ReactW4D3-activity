@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from 'uuid'
-import { NEW_TO_DO } from '../action/actions'
+import { DONE_TO_DO, NEW_TO_DO, REMOVE_TO_DO } from '../action/actions'
 
 const initState = {
     toDoList: [
@@ -19,9 +19,28 @@ const todosReducer = (state = initState, action) => {
                 ...state,
                 toDoList: [...state.toDoList, action.payload]
             }
+
+        case DONE_TO_DO:
+            var todo = state.toDoList.filter((todo)=>todo.id === action.payload.id)
+            if(todo[0].isDone){
+                todo[0].isDone = false;
+            }
+            else{
+                todo[0].isDone = true;
+            }
+            return {
+                ...state,
+                toDoList: [...state.toDoList]
+            }
     
         default:
             return state;
+        
+        case REMOVE_TO_DO:
+            return{
+                ...state,
+                toDoList: state.toDoList.filter((todo)=>todo.id !== action.payload.id)
+            }
     }
 
 }
