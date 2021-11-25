@@ -12,6 +12,7 @@ const TodoList = () => {
   //Use dispatch
   const dispatch = useDispatch()
 
+  //similar to mapStateToProps
   const todoArr = useSelector((state) => state.toDoList)
 
   const getVisibleToDos = (todoArr, filterValue) => {
